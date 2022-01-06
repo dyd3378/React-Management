@@ -38,16 +38,13 @@ class App extends Component  {
     this.stateRefresh = this.stateRefresh.bind(this);
   }
   stateRefresh (){
-    console.log("12345");
     this.setState({
       customers: '',
       compleated: 0
     });
-    console.log("56789");
     this.callApi()
       .then(res=> this.setState({customers: res}))
       .catch(err => console.log(err));
-      console.log("101010");
   }
   componentDidMount(){
     this.timer = setInterval(this.progress, 100);
